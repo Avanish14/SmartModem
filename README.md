@@ -1,2 +1,2 @@
-# smartModem
+# SmartModem
 Transmitter/Receiver that employs analog/digital modulation and modulation scheme recognition.
