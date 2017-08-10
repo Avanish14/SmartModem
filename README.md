@@ -18,7 +18,7 @@ Then, follow the command-line instructions.
 
 * [RadioML](https://github.com/radioML/dataset) - code that we modified to build our neural network and to compile data
 * [GNURadio](https://github.com/gnuradio/gnuradio) - SDR toolkit
-* [Tensorflow](https://github.com/tensorflow/tensorflow) - Neural Network library
+* [TensorFlow](https://github.com/tensorflow/tensorflow) - Neural Network library
 
 # License
 
