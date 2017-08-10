@@ -15,7 +15,7 @@ from gnuradio import uhd
 from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from optparse import OptionParser
-import time
+import time, sys
 
 
 class AMrx(gr.top_block):

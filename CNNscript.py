@@ -179,7 +179,7 @@ def main():
 	import USRPsamples
 	USRPdata = USRPsamples.main()
 	print(USRPdata)
-	predictscheme(USRPdata, 'activeweights.wts.h5')
+	predictscheme(USRPdata, sys.argv[2])
     else: # assuming training
     	runexperiment(datfilepath=sys.argv[1],weightfilepath=sys.argv[2],namestring='accuracyImage',batches=256)
 

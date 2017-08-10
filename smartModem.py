@@ -98,8 +98,17 @@ def receiveData():
         else:
             print("{} encountered an error. Return value: {}".format(pyFile, returnValue))
     elif decision.upper() == "N":
-   	print("Attempting to identify scheme of incoming signal...")
-	returnValue = raw_input("")
+   	weights = raw_input("What weight data file would you like to use? If nothing is entered, 'weightdata.wts.h5' will be used.")
+	if weights == "":
+	    weights = "weightdata.wts.h5"
+	paramString = "python CNNscript.py predict "+weights
+	print("Attempting to identify scheme of incoming signal...")
+        returnValue = subprocess.call(paramString, shell=True)
+        if returnValue == 0:
+            chooseFunc()
+	else:
+            print("CNNscript.py encountered an error. Return value: {}".format(returnValue))
+
     else:
 	print("Please enter either Y or N to answer the question.")
 	receiveData()

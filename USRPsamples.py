@@ -15,6 +15,7 @@ from gnuradio.eng_option import eng_option
 from gnuradio.filter import firdes
 from optparse import OptionParser
 import time, sys
+import numpy as np
 
 
 class USRPsamples(gr.top_block):
@@ -41,9 +42,9 @@ class USRPsamples(gr.top_block):
         self.uhd_usrp_source_0.set_center_freq(435000000, 0)
         self.uhd_usrp_source_0.set_gain(50, 0)
         self.uhd_usrp_source_0.set_antenna('TX/RX', 0)
-        self.uhd_usrp_source_0.set_bandwidth(50000, 0)
+        self.uhd_usrp_source_0.set_bandwidth(100000, 0)
         self.rational_resampler_xxx_0 = filter.rational_resampler_ccc(
-                interpolation=100000,
+                interpolation=300000,
                 decimation=2500000,
                 taps=None,
                 fractional_bw=None,
@@ -68,26 +69,25 @@ def main(top_block_cls=USRPsamples, options=None):
 
     tb = top_block_cls()
     tb.start()
-    time.sleep(.10)
+    time.sleep(.50)
     data = tb.blocks_vector_sink_x_0.data()
-    data = data[100:228] # Vector sample to identify modulation scheme with
+    data = data[500:628] # Vector sample to identify modulation scheme with
     
     # Normalizing data
-    #energy = np.sum((np.abs(data)))
-    #data = data / energy
+   # energy = np.sum((np.abs(data)))
+   # data = data / energy
     redata = np.real(data)
     imdata = np.imag(data)
     data = []
     data.append(redata)
     data.append(imdata)
-    print('!!!!!!!!!!!!!!!!!!!!!!!!')
-    print(data)
-    data = np.vstack(data)    
-    print(data)
+    data = np.vstack(data)
+    data = data[np.newaxis,:]
+    print(data.shape)
+    return data
     tb.stop()
     tb.wait()
     #print(len(data))
-    return data
 
 if __name__ == '__main__':
-    main()
+	main()
