@@ -2,9 +2,7 @@
 
 Transmitter/Receiver that employs analog/digital modulation and modulation scheme recognition with use of a USRP2.
 
-More details about this project can be found at the Orbit Lab website: 
-
-[www.orbit-lab.org/wiki/Other/Summer/2017/SpectrumClassification](www.orbit-lab.org/wiki/Other/Summer/2017/SpectrumClassification)
+More details about this project can be found at [the Orbit Lab website.](https://www.orbit-lab.org/wiki/Other/Summer/2017/SpectrumClassification "Project Website")
 
 # Running the application
 
