@@ -1,6 +1,6 @@
 # SmartModem
 
-Transmitter/Receiver that employs analog/digital modulation and modulation scheme recognition.
+Transmitter/Receiver that employs analog/digital modulation and modulation scheme recognition with use of a USRP2.
 
 More details about this project can be found at the Orbit Lab website: 
 
@@ -8,7 +8,17 @@ More details about this project can be found at the Orbit Lab website:
 
 # Running the application
 
-To work with the SmartModem, download the project and enter the following command in the command-line: 
+To work with the SmartModem, first download the project.
+The following packages are needed:
+* GNURadio
+* TensorFlow
+* Keras
+* Numpy
+* Sci-kit learn
+* Matplotlib
+* h5py
+
+After installing the needed packages, enter the following command in the command-line: 
 ```javascript
 python smartModem.py
 ```
